@@ -1,0 +1,24 @@
+<div style="background-color: rosybrown;">
+  <label style="display: flex;justify-content: center">
+    code(s) must be in format: AB,XY
+  </label>
+
+  <a href="https://www.nationsonline.org/oneworld/country_code_list.htm"
+     target="_blank" rel="noreferrer noopener"
+     style="display: flex;justify-content: center">
+    see codes here!
+  </a>
+
+  <form [formGroup]="input_form_group" (ngSubmit)="getCities()">
+    <label>Country Ids:</label>
+    <input formControlName="id_control">
+
+    <label>Min Population: </label>
+    <input formControlName="pop_control">
+
+    <button type="submit" style="font-size: 2rem">fetch</button>
+  </form>
+
+</div>
+
+

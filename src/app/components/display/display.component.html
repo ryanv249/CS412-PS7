@@ -1,0 +1,27 @@
+<!--only show if some data has been fetched -->
+<div *ngIf="city_list" style="font-size: 1.4rem; font-weight: bold; display: flex; flex-direction: column; background-color: coral;">
+
+  <h3 style="display: flex; justify-content: center">
+    click name to see country and population!
+  </h3>
+
+  <!--main content wrapper-->
+  <div style="display: flex; flex-direction: row;">
+    <ul style="padding-left: 0;;">
+      <li *ngFor="let city of city_list" style="font-size: 1.6rem; list-style-type: none;">
+        <label (click)="displayCityDetail(city)">
+          {{city.name}}
+        </label>
+      </li>
+    </ul>
+
+    <label *ngIf="focused_city" style="font-size: 1.4rem; font-weight: bold; display: flex; align-items: center;">
+      {{focused_city.name}}, {{focused_city.country}}, {{focused_city.population}}
+    </label>
+  </div>
+
+  <label style="display: flex; justify-content: center">
+    cached = {{cached_marker}}
+  </label>
+
+</div>
